@@ -1,0 +1,819 @@
+/* 
+Font Family being used
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Montserrat', sans-serif;
+
+*/
+
+
+/* ************ Global Styles *********** */
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif ;
+    font-size: 1.125rem;
+
+}
+
+
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+img{
+    object-fit: cover;
+    display: block;
+   
+}
+
+.btn{
+    
+}
+
+/*  ************* Typography ************ */
+
+h1{
+    font-size: 2.5rem;
+}
+
+
+/* ************ Grid Declaration ******* */
+
+.header-grid{
+    display: grid;
+    grid-template-columns: minmax(1em,1fr) minmax(320px,400px) minmax(1em,1fr);
+    
+}
+
+
+
+
+
+
+/* ***********        Header   *********** */
+
+.header-content{
+    margin: 0 auto;
+    padding: 0.5em 0;
+    background: #ffffff;
+}
+
+.header-content > *{
+
+    grid-column: 2 / -2;
+
+}
+
+
+.nav{
+
+    display: none;
+    
+}
+
+.nav-open{
+    background: 0;
+    border: 0;
+    font-size: 2rem;
+}
+
+.opening-nav{
+    position: absolute;
+    bottom: 70vh;
+    top: 62px;
+    left:0;
+    right: 0;
+    background: #ffffff;
+
+
+}
+
+.opening-nav-nav-list{
+    margin-left: 4em;
+}
+
+.brand-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.nav-item{
+    margin: 0.35em 0;
+}
+
+.nav-item:last-child{
+    border: 2px solid red;
+    padding: 0.2em;
+    border-radius: 4px;
+    align-self: flex-start;
+}
+
+
+
+@media(min-width:700px){
+    .headers-grid{
+        grid-template-columns: 2em repeat(3, minmax(180px, 480px)) 2em;
+        
+    }
+
+    header{
+        position: fixed;
+        
+        width: 100vw;
+    }
+
+
+    .brand-logo{
+        grid-column: 2 /span 1;
+    }
+
+    .nav-open{
+        display: none;
+    }
+
+    .nav{
+        display: initial;
+        grid-row: 1;
+        grid-column: 3 / span 2;
+        justify-self: end;
+    }
+
+    .nav-list{
+        flex-direction: row;
+    }
+
+    .nav-item{
+        margin-left: 1.65em;
+        padding: 0.35em 0;
+    }
+}
+
+
+/* Hero Section */
+
+.hero-section{
+    background: linear-gradient(48deg, #383838,#505050 );
+    background-size: cover;
+    height: 78vh;
+    color: whitesmoke;
+    grid-template-columns: 2em repeat(3, minmax(130px, 480px)) 2em;
+    justify-content: center;
+}
+
+.hero-section h1{
+    margin-top: 0;
+}
+
+
+
+.hero-section > *{
+    grid-column: 2 / -2;
+    text-align: center;
+   
+}  
+
+.hero-section-title{
+    align-self: end;
+    font-size: 2.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 350;
+}
+
+.hero-section-subtitle{
+    font-size: 2rem;
+}
+
+@media(min-width:700px){
+
+    .hero-section{
+        background-image: url(../img/jpg/banner_1.jpg);
+        height: 100vh;
+    }
+
+    .hero-section > *{
+        text-align: right;
+    }
+}
+
+
+
+/* Info section */
+
+.info-section{
+    margin: 4.5rem 0;
+}
+
+.info-section > *{
+
+    grid-column: 2 / -2;
+    text-align: center;
+
+}
+
+.info-section img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+.info-col-title{
+    font-weight: 510;
+}
+
+.info-col-subtitle{
+    opacity: 0.6;
+    line-height: 1.6;
+}
+
+@media(min-width:780px){
+    
+
+    .info-section{
+        
+        grid-template-columns: minmax(2em,1fr) repeat(3, minmax(225px, 330px)) minmax(2em,1fr);
+        grid-template-areas: ". infocol infocol infocol .";
+        grid-column-gap: 1em;
+        margin:3em 0;
+    }
+
+    .info-col{
+       
+        grid-area: infocol;
+    }
+
+    .info-col:first-child{
+        grid-column: 2 / 3;
+    }
+
+    .info-col:nth-child(2){
+        grid-column: 3/4;
+    }
+
+    .info-col:last-child{
+        grid-column: 4 /5;
+    }
+    
+}
+
+
+
+
+/* Number Section */
+
+/* colours used  #20c997  #17a2b8 #17a2b8 */
+
+.number-section{
+
+    background: linear-gradient(-200deg, #473B7B, #17a2b8 ) ;
+    grid-gap: 1em;
+    padding: 3.5em 0 ;
+    text-align: center;
+}
+
+.number-section > *{
+    grid-column: 2 / -2;
+}
+
+.number-section-title{
+    color: whitesmoke;
+    font-weight: 400;
+}
+
+.number-col{
+    background: white;
+    border-radius: 8px;
+    color: #17a2b8 ;
+   
+    padding: 1em 0;
+    
+}
+
+.number-col h1{
+    font-weight: 200;
+    letter-spacing: 3px;
+    
+}
+
+.number-col-subtitle{
+    color: black;
+    opacity: 0.5;
+    font-size: 1.5rem;
+}
+
+
+@media(min-width:850px){
+    .number-section{
+        grid-template-columns: minmax(2em,1fr) repeat(2,minmax(380px,430px)) minmax(2em,1fr) ;
+        grid-template-areas: 
+        ". title title ."
+        ". numbercol numbercol ."
+        ". numbercol numbercol .";
+    }
+
+   .number-section-title{
+       grid-area: title;
+   }
+
+   .number-col{
+       grid-column: 2/3;
+       grid-row: 2;
+       
+   }
+
+   .number-col:nth-child(2){
+      grid-column: 3 /4;
+      grid-row: 2;
+   }
+
+   .number-col:nth-child(3){
+       grid-column: 2/3;
+       grid-row: 3;
+   }
+
+   .number-col:last-child{
+        grid-column: 3 /4;
+        grid-row: 3;
+   }
+
+
+
+    
+}
+
+/* Campus Section */
+
+.campus-section{
+    margin: 3em 0;
+}
+
+.campus-section > * {
+    grid-column: 2 / -2;
+    text-align: center;
+    letter-spacing: 1.1px;
+    
+}
+
+.campus-section-title{
+    font-weight: 500;
+}
+
+.campus-col-image{
+    width: 100%;
+    height: 100%;
+}
+
+.campus-section p{
+    opacity: 0.6;
+}
+
+
+@media(min-width:850px){
+
+    .campus-section{
+        grid-template-columns: minmax(2em,1fr) repeat(2,minmax(380px,430px)) minmax(2em,1fr) ;
+        grid-gap: 1em;
+    }
+
+    .campus-section-title{
+        grid-row: 1 /2;
+        grid-column: 2/-2;
+       
+    }
+
+    .campus-section-body{
+        grid-row: 2 /3;
+        grid-column: 2/ -2;
+       
+        
+    }
+
+   .campuscol1{
+       grid-row: 3 / 4;
+       grid-column: 2 / span 1;
+        
+       
+   }
+
+   .campuscol2{
+       grid-row: 3 / 4;
+       grid-column: 3 / 4;
+      
+   }
+
+
+
+}
+
+
+/* Course Section */
+
+.course-section > *{
+
+    grid-column:  2 / -2;
+
+}
+
+.course-section{
+    text-align: center;
+}
+
+.course-col{
+    box-shadow: 1px 1px 5px grey;
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-col-title{
+    margin-top: 0;
+    background:linear-gradient(-150deg,#473B7B, #17a2b8 );
+    padding: 0.75em;
+    color: whitesmoke;
+    font-weight: 200;
+}
+
+.course-col-loc, .course-col-sta, .course-col-dur,.course-col-com{
+    text-transform: uppercase;
+    font-size: 1rem;
+    opacity: 0.76;
+}
+
+.course-col-location, .course-col-starting, .course-col-duration,.course-col-commitment{
+    font-size: 1.6rem;
+    margin-top: 0;
+    opacity: 0.8;
+    margin-bottom: 0.6em;
+}
+
+.course-col-commitment{
+    border-bottom: 2px solid #ebebeb;
+    
+}
+
+.course-col-btn{
+
+    padding: 1em 2em;
+    margin: 1em 0;
+    background: #6c757d;
+    border: 0;
+    border-radius: 30px;
+    font-weight: bold;
+    color: whitesmoke;
+    align-self: flex-end;
+    margin-right: 2em;
+
+   
+}
+
+.course-col-btn:hover, .course-col-btn:focus{
+    opacity: 0.8;
+    
+}
+
+.btn-col-last{
+    background: whitesmoke;
+    color: black;
+    padding: 1em 0.8em;
+    opacity: 0.5;
+}
+
+@media(min-width:850px){
+
+    .course-section{
+        grid-template-columns: minmax(2em,1fr) repeat(2,minmax(380px,400px)) minmax(2em,1fr) ;
+        grid-column-gap: 1em;
+    }
+
+    .course-section-title{
+        grid-row: 1 / 2;
+        grid-column: 2 / -2;
+    }
+
+    .course-col1{
+        grid-row: 2/3;
+        grid-column: 2 / 3;
+    }
+
+    .course-col2{
+        grid-row: 2/3;
+        grid-column: 3/4;
+    }
+
+    .course-col3{
+        grid-row: 3/4;
+        grid-column: 2/3;
+    }
+
+    .course-col4{
+        grid-row: 3/4;
+        grid-column: 3/4;
+    }
+
+}
+
+
+
+/* Hiring Section */
+
+.hiring-section > *{
+
+    grid-column: 2 / -2;
+    
+    
+}
+
+.hiring-section{
+    text-align: center;
+    padding: 3em 0;
+    
+    
+}
+
+.hiring-partners{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+@media(min-width:600px){
+
+    .hiring-section{
+        
+        display: unset;
+        
+    }
+
+    .hiring-partners{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+
+
+/* Payment Section */
+
+.payment-section > *{
+    grid-column: 2 / -2;
+}
+
+.payment-section{
+    text-align: center;
+    background:  linear-gradient(-200deg, #473B7B, #17a2b8 ) ;
+}
+
+.payment-section-col{
+    background: whitesmoke;
+    margin: 1em 0;
+    padding: 2em 1em;
+}
+
+.payment-section-col-title{
+    font-size: 1.35rem;
+    opacity: 0.6;
+    border-bottom: 1px solid grey;
+    padding-bottom: 0.65em;
+    margin-top: 0;
+}
+
+.payment-section-col-fee,.payment-section-col-prog{
+    font-size: 1.7rem;
+}
+
+.payment-section-col-fee + p{
+    font-size: 1.7rem;
+}
+
+.payment-section-col-amt {
+    color: #17a2b8;
+    font-size: 2.5rem;
+}
+
+.payment-last1{
+    color: red;
+    opacity: 0.7;
+}
+
+.payment-last2{
+    font-size: 1.4rem;
+}
+
+.payment-section-btn{
+    margin: 2em 0;
+    justify-self: center;
+    background: transparent;
+    border-radius: 20px;
+    padding: 1em 2em;
+    border: 2px solid white;
+    color: white;
+}
+
+.payment-section-btn:hover, .payment-section-btn:focus{
+    opacity: 0.75;
+}
+
+
+
+@media(min-width:850px){
+
+    .payment-section{
+        
+        grid-template-columns: minmax(2em,1fr) repeat(2,minmax(380px,400px)) minmax(2em,1fr) ;
+        grid-column-gap: 2em;
+    }
+
+    .payment-section-title{
+        grid-row: 1;
+        grid-column: 2 /-2;
+    }
+
+    .pay-col1{
+        grid-row: 2 /3;
+        grid-column: 2 /3;
+    }
+
+    .pay-col2{
+        grid-row: 2/3;
+        grid-column: 3/4;
+    }
+
+    .payment-section-btn{
+        grid-row: 3;
+        grid-column: 2 / -2;
+    }
+
+
+
+}
+
+
+
+
+/* Addmission Section */
+
+/* .addmission-container1 > *, .addmission-container2 > *{
+    grid-column: 2 / -2;
+} */
+
+
+.addmission-section{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.addmission-container1, .addmission-container2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.addmission-col-container{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.addmission-col-image{
+    background:  linear-gradient(-200deg, #473B7B, #17a2b8 ) ;
+    border-radius: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 180px;
+    object-fit: fill;
+    
+}
+
+.addmission-section-subtitle{
+    font-size: 1.8rem;
+    font-weight: 100;
+}
+
+.addmission-col-title-f{
+    font-size: 1.3rem;
+    opacity: 0.6;
+}
+
+.addmission-col-subtitle-f{
+    font-size: 1.6rem;
+    opacity: 0.85;
+}
+
+.addmission-container1 .addmission-col:last-child{
+    border-bottom: 1px solid lightgray;
+}
+
+.addmission-col-title-l{
+    font-size: 1.6rem;
+    opacity: 0.85;
+}
+
+.addmission-col-subtitle-l{
+    font-size: 1.3rem;
+    opacity: 0.6;
+}
+
+.addmission-section-btn{
+    justify-self: center;
+    background: #dc3545;
+    color: white;
+    padding: 1.3em 3.5em;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    align-self: center;
+}
+
+
+.addmission-section-btn:hover, .addmission-section-btn:focus{
+    opacity: 0.75;
+}
+
+.addmission-section{
+    border-bottom: 1px solid lightgray;
+}
+
+@media(min-width:700px){
+    .addmission-section{
+        display: unset;
+        margin-left:  auto;
+        margin-right: auto;
+    }
+
+    .addmission-col-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    
+
+    .add-col-container2 .addmission-col,.add-col-container2 .addmission-col{
+        margin: 0 5em;
+    }
+
+    
+}
+
+
+/* Footer Section */
+
+.footer{
+    margin: 3.5rem 0;
+}
+
+
+.footer-flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-left-item{
+    color: blue;
+    margin-left: 1.5em;
+}
+
+.footer-right-list{
+   
+
+    font-size: 2rem;
+   
+
+}
+
+.footer-right{
+    margin-left: auto;
+}
+
+.footer-right-item{
+    margin-left: 0.3em;
+}
